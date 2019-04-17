@@ -42,6 +42,23 @@ def hello_world():
 
 
 @app.route('/')
+@app.route('/index')
+def index():
+    user ={'username': 'Alex'}
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'New Awesome!'
+        },
+        {
+            'author': {'username': 'Peter'},
+            'body': 'Picture perfect!'
+        }
+    ]
+    return render_template('index.html', title='Home', user=user, posts=posts)
+
+
+@app.route('/view')
 def view_all():
     return render_template('view_all.html', Students = Students.query.all() )
 

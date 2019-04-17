@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{ title }}- Sample Mysql SQLAlchemy App</title>
+    {% else %}
+    <title>Sample Mysql SQLAlchemy</title>
+    {% endif %}
+</head>
+<body>
+    <div>Sample SQLAlchemy App: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+
+</body>
+</html>
