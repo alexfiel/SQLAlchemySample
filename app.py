@@ -1,6 +1,9 @@
 from flask import Flask, redirect, url_for, flash
 from flask import render_template, request
 from flask_sqlalchemy import SQLAlchemy
+#from flask import app
+
+from flask import LoginForm
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:cto154@localhost:3306/books'
@@ -31,6 +34,12 @@ class Students(db.Model):
         self.zip = pin
 
 
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Sign In', form=form)
+
+
 @app.route('/home', methods=["GET", "POST"])
 def hello_world():
     if request.form:
@@ -39,23 +48,6 @@ def hello_world():
         db.session.commit()
         flash('New File Recorded')
     return render_template('home.html')
-
-
-@app.route('/')
-@app.route('/index')
-def index():
-    user ={'username': 'Alex'}
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'New Awesome!'
-        },
-        {
-            'author': {'username': 'Peter'},
-            'body': 'Picture perfect!'
-        }
-    ]
-    return render_template('index.html', title='Home', user=user, posts=posts)
 
 
 @app.route('/view')
