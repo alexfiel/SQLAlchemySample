@@ -91,3 +91,4 @@ Traceback (most recent call last):
   File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1957, in make_response
     'The view function did not return a valid response. The'
 TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-04-19 16:00:34,256 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
