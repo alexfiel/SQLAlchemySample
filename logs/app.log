@@ -42,3 +42,52 @@ jinja2.exceptions.UndefinedError: 'form' is undefined
 2019-04-19 14:46:56,030 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
 2019-04-19 14:48:15,567 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
 2019-04-19 15:01:32,076 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:36:10,554 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:36:22,062 ERROR:Exception on /explore [GET] [in C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\SQLAlchemy_Sample\app\routes.py", line 148, in explore
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
+NameError: name 'page' is not defined
+2019-04-19 15:38:16,112 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:45:50,639 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:47:11,081 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:47:40,634 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:50:42,755 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:51:43,283 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:59:27,171 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 15:59:36,380 ERROR:Exception on /user/a [GET] [in C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-04-19 15:59:42,943 ERROR:Exception on /user/a [GET] [in C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
