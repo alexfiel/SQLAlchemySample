@@ -1,0 +1,121 @@
+2019-04-19 10:22:53,424 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 10:23:00,253 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 10:29:02,163 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 10:58:33,051 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 10:58:42,238 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 12:46:57,915 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 12:49:46,849 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 12:59:56,208 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 13:01:55,209 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 13:51:05,430 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 13:51:16,664 ERROR:Exception on /index [GET] [in C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'books.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "D:\SQLAlchemy_Sample\app\routes.py", line 86, in before_request
+    if current_user.is_authenticated:
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "D:\SQLAlchemy_Sample\app\models.py", line 62, in load_user
+    return User.query.get(int(id))
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 1069, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 282, in load_on_pk_identity
+    return q.one()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 3275, in one
+    ret = self.one_or_none()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 3244, in one_or_none
+    ret = list(self)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 3317, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 3342, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\tagbi\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'books.user' doesn't exist")
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.id = %(param_1)s]
+[parameters: {'param_1': 7}]
+(Background on this error at: http://sqlalche.me/e/f405)
+2019-04-19 13:53:43,179 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
+2019-04-19 13:53:52,510 INFO:SQLAlchemy Sample [in D:\SQLAlchemy_Sample\app\__init__.py:44]
